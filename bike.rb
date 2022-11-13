@@ -5,13 +5,13 @@ class Bike
   STANDARD_WEIGHT_LBS = 200 # lbs
   MAX_CARGO_ITEMS = 10
 
-  attr_accessor :color, :weight, :cargo_contents, :rental_data
+  attr_accessor :color, :weight, :pannier, :rental_data
 
   def initialize(id, color, price, weight = STANDARD_WEIGHT_LBS, rented = false)
     @rental_data = recordify(id, price, rented)
     @color = color
     @weight = weight
-    @cargo_contents = CargoContents.new(MAX_CARGO_ITEMS)
+    @pannier = Pannier.new(MAX_CARGO_ITEMS)
   end
 
   RentalData = Struct.new(:id, :price, :rented)
@@ -24,28 +24,28 @@ class Bike
   end
   
   def add_cargo(item)
-    cargo_contents.add(item)
+    pannier.add(item)
   end
 
   def remove_cargo(item)
-    cargo_contents.remove(item)
+    pannier.remove(item)
   end
 
   def pannier_capacity
-    MAX_CARGO_ITEMS
+    pannier.capacity
   end
 
   def pannier_remaining_capacity
-    MAX_CARGO_ITEMS - cargo_content_size
+    pannier.remaining_capacity
   end
 
   def cargo_content_size
-    cargo_contents.size
+    pannier.size
   end
 
 end
 
-class CargoContents
+class Pannier
   attr_accessor :contents, :capacity 
 
   def initialize(capacity, contents=[])
