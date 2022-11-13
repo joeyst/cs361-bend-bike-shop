@@ -2,7 +2,7 @@
 
 class Bike
 
-  STANDARD_WEIGHT = 200 # lbs
+  STANDARD_WEIGHT_LBS = 200 # lbs
   MAX_CARGO_ITEMS = 10
 
   attr_accessor :id, :color, :price, :weight, :rented, :cargo_contents
