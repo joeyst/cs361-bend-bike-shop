@@ -11,7 +11,7 @@ class Bike
     @rental_data = recordify(id, price, rented)
     @color = color
     @weight = weight
-    @cargo_contents = []
+    @cargo_contents = CargoContents.new
   end
 
   RentalData = Struct.new(:id, :price, :rented)
@@ -24,7 +24,7 @@ class Bike
   end
   
   def add_cargo(item)
-    cargo_contents << item
+    cargo_contents.add(item)
   end
 
   def remove_cargo(item)
@@ -48,7 +48,7 @@ end
 class CargoContents
   attr_accessor :contents
 
-  def initialize(contents)
+  def initialize(contents=[])
     @contents = contents
   end
 
