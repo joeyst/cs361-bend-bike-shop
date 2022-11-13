@@ -51,5 +51,13 @@ class CargoContents
   def initialize(contents)
     @contents = contents
   end
+
+  def add(item)
+    contents << item
+  end
+
+  def remove(item)
+    contents.remove(item)
+  end
   
 end
