@@ -17,15 +17,15 @@ class Bike
   end
 
   def rent!
-    self.rented = true
+    rented = true
   end
   
   def add_cargo(item)
-    self.cargo_contents << item
+    cargo_contents << item
   end
 
   def remove_cargo(item)
-    self.cargo_contents.remove(item)
+    cargo_contents.remove(item)
   end
 
   def pannier_capacity
@@ -37,7 +37,7 @@ class Bike
   end
 
   def cargo_content_size
-    self.cargo_contents.size
+    cargo_contents.size
   end
 
 end
