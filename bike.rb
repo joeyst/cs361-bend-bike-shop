@@ -5,9 +5,10 @@ class Bike
   STANDARD_WEIGHT_LBS = 200 # lbs
   MAX_CARGO_ITEMS = 10
 
-  attr_accessor :id, :color, :price, :weight, :rented, :cargo_contents
+  attr_accessor :id, :color, :price, :weight, :rented, :cargo_contents, :rental_data
 
   def initialize(id, color, price, weight = STANDARD_WEIGHT_LBS, rented = false)
+    @rental_data = recordify(id, price, rented)
     @id = id
     @color = color
     @price = price
@@ -17,7 +18,7 @@ class Bike
   end
 
   RentalData = Struct.new(:id, :price, :rented)
-  def bikify(id, price, rented)
+  def recordify(id, price, rented)
     RentalData.new(id, price, rented)
   end
 
