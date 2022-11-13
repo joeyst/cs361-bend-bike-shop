@@ -7,7 +7,7 @@ class Bike
 
   attr_accessor :id, :color, :price, :weight, :rented, :cargo_contents
 
-  def initialize(id, color, price, weight = STANDARD_WEIGHT, rented = false)
+  def initialize(id, color, price, weight = STANDARD_WEIGHT_LBS, rented = false)
     @id = id
     @color = color
     @price = price
@@ -19,7 +19,7 @@ class Bike
   def rent!
     self.rented = true
   end
-
+  
   def add_cargo(item)
     self.cargo_contents << item
   end
@@ -34,6 +34,10 @@ class Bike
 
   def pannier_remaining_capacity
     MAX_CARGO_ITEMS - self.cargo_contents.size
+  end
+
+  def cargo_content_size
+    self.cargo_contents.size
   end
 
 end
