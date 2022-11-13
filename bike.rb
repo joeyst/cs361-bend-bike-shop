@@ -9,11 +9,8 @@ class Bike
 
   def initialize(id, color, price, weight = STANDARD_WEIGHT_LBS, rented = false)
     @rental_data = recordify(id, price, rented)
-    @id = id
     @color = color
-    @price = price
     @weight = weight
-    @rented = rented
     @cargo_contents = []
   end
 
