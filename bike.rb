@@ -16,6 +16,11 @@ class Bike
     @cargo_contents = []
   end
 
+  RentalData = Struct.new(:id, :price, :rented)
+  def bikify(id, price, rented)
+    RentalData.new(id, price, rented)
+  end
+
   def rent!
     rented = true
   end
