@@ -20,7 +20,7 @@ class Bike
   end
 
   def rent!
-    rented = true
+    rental_data.rented = true
   end
   
   def add_cargo(item)
@@ -54,11 +54,11 @@ class Pannier
   end
 
   def add(item)
-    contents << item
+    contents << Item.new(item)
   end
 
   def remove(item)
-    contents.remove(item)
+    contents.remove(Item.new(item))
   end
 
   def remaining_capacity
@@ -69,4 +69,12 @@ class Pannier
     contents.size
   end
   
+end
+
+class Item
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
 end
