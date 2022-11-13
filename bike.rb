@@ -44,3 +44,12 @@ class Bike
   end
 
 end
+
+class CargoContents
+  attr_accessor :contents
+
+  def initialize(contents)
+    @contents = contents
+  end
+  
+end
