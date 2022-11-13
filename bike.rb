@@ -33,7 +33,7 @@ class Bike
   end
 
   def pannier_remaining_capacity
-    MAX_CARGO_ITEMS - self.cargo_contents.size
+    MAX_CARGO_ITEMS - cargo_content_size
   end
 
   def cargo_content_size
