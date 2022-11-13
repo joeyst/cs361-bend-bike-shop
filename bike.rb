@@ -22,6 +22,10 @@ class Bike
   def rent!
     rental_data.rented = true
   end
+
+  def add_cargos(*items)
+    items.each {|item| add_cargo(item)}
+  end
   
   def add_cargo(item)
     pannier.add(item)
