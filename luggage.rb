@@ -2,9 +2,9 @@ class Luggage
 
   DEFAULT_MAX_CAPACITY = 10
 
-  attr_reader :items
+  attr_accessor :items
 
-  def initialize(initial_capacity, items)
+  def initialize(items=[], capacity=DEFAULT_MAX_CAPACITY)
     @capacity = initial_capacity
     @items = items
   end

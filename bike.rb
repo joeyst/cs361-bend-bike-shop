@@ -12,7 +12,7 @@ class Bike
     @color = color
     @price = price
     @weight = STANDARD_WEIGHT_LBS
-    @luggage = Luggage.new(Luggage::DEFAULT_MAX_CAPACITY, extra_items)
+    @luggage = Luggage.new(extra_items, Luggage::DEFAULT_MAX_CAPACITY)
   end
 
 end
