@@ -15,4 +15,12 @@ class Bike
     @luggage = Luggage.new(extra_items)
   end
 
+  def luggage_price
+    luggage.price
+  end
+
+  def luggage_count
+    luggage.count
+  end
+
 end

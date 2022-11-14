@@ -13,12 +13,20 @@ class Luggage
     items << item
   end
 
+  def price
+    weight_lbs
+  end
+
   def weight_lbs
     size * 10
   end
 
   def size
     items.size
+  end
+
+  def count
+    items.count
   end
 
 end
