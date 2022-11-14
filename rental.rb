@@ -7,27 +7,11 @@ class Rental
   end
 
   def price
-    bike_price + luggage_price
+    self.bike.price + self.bike.luggage.items.count * 10
   end
 
   def weight
-    bike_weight + luggage_count
-  end
-
-  def bike_weight
-    bike.weight
-  end
-
-  def luggage_count
-    bike.luggage_count
-  end
-
-  def bike_price
-    bike.price
-  end
-
-  def luggage_price
-    bike.luggage_price
+    self.bike.weight + self.bike.luggage.items.count
   end
 
 end
