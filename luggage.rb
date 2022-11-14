@@ -5,7 +5,7 @@ class Luggage
   attr_accessor :items
 
   def initialize(items=[], capacity=DEFAULT_MAX_CAPACITY)
-    @capacity = initial_capacity
+    @capacity = capacity
     @items = items
   end
 
