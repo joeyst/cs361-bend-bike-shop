@@ -7,7 +7,7 @@ class Bike
 
   attr_reader :status, :color, :weight, :luggage
 
-  def initialize(id, color, price, extra_items)
+  def initialize(id, color, price, extra_items=[])
     @status = Status.new(id, price)
     @color = color
     @weight = STANDARD_WEIGHT_LBS
