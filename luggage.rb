@@ -10,11 +10,15 @@ class Luggage
   end
 
   def add(item)
-    self.items << item
+    items << item
   end
 
-  def weight
-    self.items.size * 10
+  def weight_lbs
+    size * 10
+  end
+
+  def size
+    items.size
   end
 
 end
